@@ -3,11 +3,14 @@ import ProductRepositoryInterface from "../../../domain/product/repository/produ
 import { OutputListProductDTO } from "./list.product.dto";
 
 export class ListProductUseCase {
-  constructor(private productRepository: ProductRepositoryInterface) {}
+  private productRepository: ProductRepositoryInterface;
+
+  constructor(productRepository: ProductRepositoryInterface) {
+    this.productRepository = productRepository;
+  }
 
   public async execute(): Promise<OutputListProductDTO> {
     const products = await this.productRepository.findAll();
-
     return OutputMapper.toOutput(products);
   }
 }

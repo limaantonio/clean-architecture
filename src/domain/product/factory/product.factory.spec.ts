@@ -14,7 +14,7 @@ describe("Product factory unit teste", () => {
     expect(product).toBeDefined();
     expect(product.name).toBe("Product B");
     expect(product.price).toBe(10);
-    expect(product.constructor.name).toBe("ProductB");
+    expect(product.constructor.name).toBe("Product");
   });
 
   it("should throw an error when create a product with invalid type", () => {

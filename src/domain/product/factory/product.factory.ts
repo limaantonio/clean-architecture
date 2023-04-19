@@ -1,5 +1,4 @@
 import Product from "../entity/product";
-import ProductInterface from "../entity/product.interface";
 import { v4 as uuid } from "uuid";
 
 export default class ProductFactory {
@@ -7,7 +6,7 @@ export default class ProductFactory {
     type: string,
     name: string,
     price: number
-  ): ProductInterface {
+  ): Product {
     switch (type) {
       case "a":
         return new Product(uuid(), name, price);
