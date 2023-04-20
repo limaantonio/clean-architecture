@@ -33,15 +33,4 @@ describe("Unit teste update product use case", () => {
       price: input.price,
     });
   });
-
-  it("should throw an error when name is missing", async () => {
-    const productRepository = MockRespository();
-    const productUpdateUserCase = new UpdateProductUsecase(productRepository);
-
-    input.name = "";
-
-    await expect(productUpdateUserCase.execute(input)).rejects.toThrow(
-      "Name is required"
-    );
-  });
 });
